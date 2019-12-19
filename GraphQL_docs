@@ -1,0 +1,29 @@
+Итак, для того чтобы использовать GraphQL в андроиде, вам понадобится кое-что установить: 
+  Плагин JS-GraphQL вроде называется(скачать в Android Studio), который облегчит вам жизнь
+  Скачать Node.js на ваш ПК
+  
+Вы сделали это, молодцы! Теперь нам нужно установить библиотеку Apollo, которая позволяет вам использовать GraphQL в Android
+и еще пару библиотек:
+    implementation 'com.apollographql.apollo:apollo-runtime:1.0.2'
+    implementation "com.apollographql.apollo:apollo-android-support:1.0.2"
+    implementation "com.apollographql.apollo:apollo-rx2-support:1.0.2"
+    implementation("com.squareup.okhttp3:okhttp:4.2.1")
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.0.1'
+    Если у вас котлин, то не забудьте установить плагин библиотеки (apply plugin: 'com.apollographql.android')
+ 
+Отлично. Теперь зайдите в командную строку и пропишите эту строчку(если будете лазить в инете и видеть подобный синтаксис,
+то знайте, что это устанвливается в командной строке при наличии Node.js Вот кстати полезный сайтик https://www.npmjs.com/):
+  npm install -g apollo 
+  
+  
+Отлично. Сейчас в вашем проекте в Android Studio создадим папки в еще одной созданной папке('graphql/com/YOUR_NAME/YOUR_PROJECT/')
+А еще нужно вместо Android-проекта перейти на просто Project в студии и в самой main создать эту иерархию папок
+Затем в командной строке прописываем "cd <Ваш путь к корню папки >"
+Потом пишем ""apollo schema:download --endpoint=<YOUR SITE>/graphql schema.json 
+
+После всех этих действий все остается за малым: сделать ребилд проекта и в вашей созданной папке создать файл с расширением .graphql,
+В этом файле вы будете писать свои запросы. После этого снова ребилдим проект. Итак, вы готовы и можете со спокойной душой использовать
+Apollo в Android. Остается вам только что-либо написать для примера
+
+Вот полезные ссылки: https://graphql.org/learn/ | https://www.apollographql.com/docs/android/essentials/get-started/
+  
